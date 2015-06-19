@@ -22,7 +22,8 @@ LANGUAGES = (
     ('en-us', 'English'),
 )
 
-SITE_ROOT = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
+
+
 LOG_ROOT = None
 SITE_DOMAIN = None
 MONGODB_CONF = None
@@ -73,7 +74,7 @@ def _load_config(section, config_files):
         },
     }
 
-_load_config('blog', [os.path.join(SITE_ROOT, 'dongblog.cfg')])
+_load_config('blog', [os.path.join(BASE_DIR, 'dongblog.cfg')])
 
 WEBSITE_NAME = u'降龙'
 WEBSITE_DESC = u'记录生活与工作的点滴，分享旅行与技术的乐趣。'
@@ -117,7 +118,7 @@ STATIC_ROOT = '/var/app/enabled/blog-webfront/static/'
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-    os.path.join(SITE_ROOT, 'static'),
+    os.path.join(BASE_DIR, 'static'),
 )
 
 
@@ -147,12 +148,12 @@ ROOT_URLCONF = 'dongblog.urls'
 WSGI_APPLICATION = 'dongblog.wsgi.application'
 
 TEMPLATE_DIRS = (
-    os.path.join(SITE_ROOT, 'templates'),
+    os.path.join(BASE_DIR, 'templates'),
 )
 
 LOCALE_PATHS = (
-    os.path.join(SITE_ROOT, 'locale'),
-    os.path.join(SITE_ROOT, 'jsi18n', 'locale'),
+    os.path.join(BASE_DIR, 'locale'),
+    os.path.join(BASE_DIR, 'jsi18n', 'locale'),
 )
 
 
